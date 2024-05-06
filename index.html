@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>3dHoverEffect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="img/img1.jpg" alt="" class="img">
+        <img src="img/img2.jpg" alt="" class="img">
+        <img src="img/img3.jpg" alt="" class="img">
+        <img src="img/img4.jpg" alt="" class="img">
+        <img src="img/img5.jpg" alt="" class="img">
+        <img src="img/img6.jpg" alt="" class="img">
+    </div>
+    
+    <script>
+        document.querySelectorAll('.img').forEach((box,index,boxes) =>{
+            box.addEventListener('mouseover', () => {  
+            boxes.forEach((b,i) =>{
+                let className = i < index ? 'prev' : i === index ? 'hovered' : 'next';
+                b.classList.remove('prev','hovered','next');
+                
+                b.classList.add(className);
+            })
+         })
+        })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
